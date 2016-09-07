@@ -24,24 +24,29 @@ public:
 
     	max_len=0;
 
+    	int max_len_rt=len_s;
+
     	for (char c='a';c<='z';c++){
     		const std::vector<int> &v=map_char[c];
+    		if (v.size()==2) continue;
+
     		int delta_now=0,i=0;
 
-    		for (auto s=v.begin();s<v.end();s++){    			
-    			if (s==v.begin()) continue;
+    		for (auto s=v.begin()+1;s<v.end();s++){    			
+    			
     			delta_now=*s-*(s-1);
     			if (delta_now>max_len)    
     				max_len=delta_now;			
  
     		}
 
+    		if (max_len>max_len_rt) max_len_rt=max_len;
     	}
 
-    	if (max_len==0) return len_s;
+    	//if (max_len==0) return len_s;
 
 
-    	return max_len;
+    	return max_len_rt;
 
         
     }
