@@ -29,6 +29,7 @@ public:
     		const std::vector<int> &v=map_char[c];
     		if (v.size()==2) continue;
 
+    		//delta = next - prev
     		int delta_now=0,i=0;
     		max_len=0;
 
@@ -42,8 +43,8 @@ public:
 
     		if (max_len< max_len_rt) max_len_rt=max_len;
     	}
+
     	
-    	//
     	//if (max_len==0) return len_s;
 
 
