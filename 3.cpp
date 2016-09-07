@@ -42,11 +42,13 @@ public:
 
     		if (max_len< max_len_rt) max_len_rt=max_len;
     	}
+    	
     	//
     	//if (max_len==0) return len_s;
 
 
     	return max_len_rt;
+
 
         
     }
