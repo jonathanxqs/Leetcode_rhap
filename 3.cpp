@@ -8,10 +8,18 @@ public:
 
     	std::map<char, std::vector<int> > map_char;
 
+    	for (char c='a';c<='z';c++){
+    		map_char[c].push_back(0);
+    	}
+
     	for (i=1;i<=len_s;i++){
     		
-    		map_char[s[i-1]].push_back(i-1);
+    		map_char[s[i-1]].push_back(i);
     		
+    	}
+
+    	for (char c='a';c<='z';c++){
+    		map_char[c].push_back(len_s+1);
     	}
 
     	max_len=0;
@@ -20,7 +28,7 @@ public:
     		const std::vector<int> &v=map_char[c];
     		int delta_now=0,i=0;
 
-    		for (auto s=v.begin();s<v.end();v++){    			
+    		for (auto s=v.begin();s<v.end();s++){    			
     			if (s==v.begin()) continue;
     			delta_now=*s-*(s-1);
     			if (delta_now>max_len)    
