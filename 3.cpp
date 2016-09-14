@@ -12,15 +12,19 @@ public:
         // try to extend the range [i, j]
 
         for (j = 0, i = 0; j < n; j++) {
-        	cout<<i<<" "<<j<<" "<<s[j]<<endl;
+        	// cout<<i<<" "<<j<<" "<<s[j]<<" count s[j]=="<<map.count(s[j])<<endl;
 
             if (map.count(s[j]) ) {
-            	//duplicate
-                i = max(map[s[j]], i);
+            	//exsit
+                i = max(map[s[j]]+1, i);
+                //duplicate changed
             }
 
+
             ans = max(ans, j - i + 1);
-            map[s[j+1]]= j + 1;
+            map[s[j]]= j;
+            // cout<<i<<" "<<j<<" "<<s[j]<<endl;
+
         }
 
         return ans;
