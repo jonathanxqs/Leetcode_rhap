@@ -18,14 +18,16 @@ public:
 
         int jw =0 ,sum1 = 0;
         while (p or q){
-            if (p) sum1 += p->val;
-            if (q) sum1 += q->val;
-            sum1 += jw;
+            sum1 = jw;
+            if (p) { sum1 += p->val;  p=p->next; }
+            if (q) {  sum1 += q->val;  q= q->next; }
+            
             jw = sum1 / 10;
             sum1 = sum1 % 10;
             t1 = new ListNode(sum1);
             t2-> next = t1;
             t2 = t1;
+             
 
         }
 
