@@ -31,6 +31,15 @@ public:
 
         }
 
+        while (jw) {
+           
+            sum1 = jw % 10;
+             jw = jw / 10;
+            t1 = new ListNode(sum1);
+            t2-> next = t1;
+            t2 = t1;
+        }
+
         t2->next = NULL;
         return ret1->next;
 
