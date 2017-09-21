@@ -8,13 +8,18 @@ public:
         len_col = grid[0].size();
         if (len_col == 0 ) return 0;
         int rt_cnt = 0;
+        // cout<< len_row << len_col <<endl;
         
         int i,j,k,i1,i2;
         for (i=0;i<len_row;i++ )
         {
             for (j=0;j<len_col;j++){
-                if (dfs(grid,i,j) == 1) rt_cnt++;
-                
+                if ( dfs(grid,i,j) == 1) 
+                {
+                    rt_cnt++;
+                    // cout <<"+1" << i << j<<endl;
+                }
+                // cout << i << j<<endl;
             }
         }
         
@@ -26,8 +31,8 @@ public:
         if (i<0 or i>= len_row) return -1;
         if (j<0 or j>= len_col) return -1;
         
-        if (grid[i][j] != 0){
-            grid[i][j] = 0;
+        if (grid[i][j] != '0'){
+            grid[i][j] = '0';
             
             dfs(grid,i+1,j);
             dfs(grid,i,j+1);
