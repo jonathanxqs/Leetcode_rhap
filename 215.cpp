@@ -62,20 +62,37 @@ private:
 
 //
 
+
 class Solution { 
 public:
+    inline int swap(vector<int>& nums, int left, int right){
+        if (left <0 or right>= nums.size()) return -1;
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+
+        return 1;
+    }
+
     int partition(vector<int>& nums, int left, int right) {
         int pivot = nums[left];
         int l = left + 1, r = right;
         while (l <= r) {
             if (nums[l] < pivot && nums[r] > pivot)
-                swap(nums[l++], nums[r--]);
+                swap(nums,l++, r--);
+
             if (nums[l] >= pivot) l++; 
             if (nums[r] <= pivot) r--;
         }
-        swap(nums[left], nums[r]);
+        swap(nums,left, r);
         return r;
     }
+
+    /*
+     * param k : description of k
+     * param nums : description of array and index 0 ~ n-1
+     * return: description of return
+     */
     
     int findKthLargest(vector<int>& nums, int k) {
         int left = 0, right = nums.size() - 1;
@@ -85,5 +102,7 @@ public:
             if (pos > k - 1) right = pos - 1;
             else left = pos + 1;
         }
+
+        
     }
 };
