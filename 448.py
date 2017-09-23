@@ -5,7 +5,9 @@ class Solution:
         :rtype: List[int]
         """
         
-        n = len(nums);
-        index = 0;
+        n = len(nums);        
         for i in range(0,n):
-            nums[nums[i]] = - abs(nums[nums[i]]);
+            nums[abs(nums[i])-1] = -abs(nums[abs(nums[i])-1]) 
+            # print(nums[abs(nums[i])-1])
+
+        return [i+1 for i in range(n) if nums[i]>0  ]
