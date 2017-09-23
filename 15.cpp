@@ -1,4 +1,7 @@
-vector<vector<int> > threeSum(vector<int> &num) {
+class Solution{
+public:
+
+    vector<vector<int> > threeSum(vector<int> &num) {
     
     vector<vector<int> > res;
 
@@ -34,7 +37,7 @@ vector<vector<int> > threeSum(vector<int> &num) {
 
                 // Processing duplicates of Number 3
                 // Rolling the back pointer to the next different number backwards
-                while (front < back && num[back] == triplet[2]) rear--;
+                while (front < back && num[back] == triplet[2]) back--;
             }
             
         }
@@ -47,4 +50,7 @@ vector<vector<int> > threeSum(vector<int> &num) {
     
     return res;
     
-}
+    }
+};
+
+
