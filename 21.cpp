@@ -15,9 +15,20 @@ public:
         ListNode* h = new ListNode(0);
         ListNode* t = h;
         
-        while (p!=null or q!=null){
-            
+        while (p!=nullptr or q!=nullptr){
+            if (q==nullptr or (p!=nullptr and p->val < q->val) ){
+                t->next = p;
+                t = p;
+                p = p->next;
+            }
+            else {
+                t->next = q;
+                t = q;
+                q = q->next;
+            }
         }
+        
+        return h->next;
         
         
         
