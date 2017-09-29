@@ -8,13 +8,14 @@ public:
         result.push_back("");   // add a seed for the initial case
         for(int i = 0 ; i < digits.size(); ++i) {
             int num = digits[i]-'0';
-            if(num < 0 || num > 9) { 
+            if(num <= 1 || num > 9) { 
                 result.clear();
-                return result ;
+                return result ; // illegal
             }
             const string& candidate = v[num];
             if(candidate.empty()) continue;
-            vector<string> tmp;
+
+            vector<string> tmp;  // every result + new candidate
             for(int j = 0 ; j < candidate.size() ; ++j) {
                 for(int k = 0 ; k < result.size() ; ++k) {
                     tmp.push_back(result[k] + candidate[j]);
@@ -22,6 +23,7 @@ public:
             }
             result.swap(tmp);
         }
+
         return result;
     }
 
