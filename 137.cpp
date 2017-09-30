@@ -9,6 +9,7 @@ public:
         //# 10      1/0       00/10
         // a=~abc+a~b~c;
         // b=~a~bc+~ab~c;
+        // finite state machine
         int a=0;
         int b=0;
         for(auto c:nums){
