@@ -26,14 +26,14 @@ public:
             } 
             if (it2 < it1 and it2 < it3){
                 if (it1 == s.begin()) return false; // no peer
-                if ( *(it2-1) != '(' ) return false;
+                if ( *(it2-1) != '[' ) return false;
                 s.erase(it2-1);
                 s.erase(it2);
                 continue;
             }
             if (it3 < it1 and it3 < it2){
                 if (it3 == s.begin()) return false; // no peer
-                if ( *(it3-1) != '(' ) return false;
+                if ( *(it3-1) != '{' ) return false;
                 s.erase(it3-1);
                 s.erase(it3);
                 continue;
