@@ -21,21 +21,22 @@ public:
                 if (it1 == s.begin()) return false; // no peer
                 if ( *(it1-1) != '(' ) return false;
                 s.erase(it1-1);
-                s.erase(it1);
+                // seams wrong , s.erase(it1);
+                s.erase(it1-1); 
                 continue;
             } 
             if (it2 < it1 and it2 < it3){
                 if (it1 == s.begin()) return false; // no peer
                 if ( *(it2-1) != '[' ) return false;
                 s.erase(it2-1);
-                s.erase(it2);
+                s.erase(it2-1);
                 continue;
             }
             if (it3 < it1 and it3 < it2){
                 if (it3 == s.begin()) return false; // no peer
                 if ( *(it3-1) != '{' ) return false;
                 s.erase(it3-1);
-                s.erase(it3);
+                s.erase(it3-1);
                 continue;
             }
 
