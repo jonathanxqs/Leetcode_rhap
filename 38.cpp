@@ -2,7 +2,7 @@ class Solution {
 public:
     string countAndSay(int n) {
         if (n == 0) return "";
-        string res = "1";
+        string res = "1";   // when n ==1 ,ret "1"
         while (--n) {
             string cur = "";
             for (int i = 0; i < res.size(); i++) {
