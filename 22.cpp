@@ -5,7 +5,7 @@ public:
         addingpar(res, "", n, 0);
         return res;
     }
-    // @ param :  n left , m left - right , str current
+    // @ param :  n left , m left - right , str current  , v reference to rt
     void addingpar(vector<string> &v, string str, int n, int m){
         if(n==0 && m==0) {
             v.push_back(str);
