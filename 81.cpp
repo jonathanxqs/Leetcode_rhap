@@ -3,21 +3,24 @@ public:
     bool search(vector<int>& nums, int target) {
         int lo =0, hi = nums.size()-1;
         int mid = 0;
+
+       if (hi<0) return false;
         while(lo<hi){
               mid=(lo+hi)/2;
-              if(A[mid]==target) return true;
-              
-              if(A[mid]>A[hi]){
-                  if(A[mid]>target && A[lo] <= target) hi = mid;
+              if(nums[mid]==target) return true;
+
+              if(nums[mid]>nums[hi]){
+                  if(nums[mid]>target && nums[lo] <= target) hi = mid;
                   else lo = mid + 1;
-              }else if(A[mid] < A[hi]){
-                  if(A[mid]<target && A[hi] >= target) lo = mid + 1;
+              }else if(nums[mid] < nums[hi]){
+                  if(nums[mid]<target && nums[hi] >= target) lo = mid + 1;
                   else hi = mid;
               }else{
                   hi--;
               }
               
         }
-        return A[lo] == target ? true : false;
+
+        return nums[lo] == target ? true : false;
     }
 };
