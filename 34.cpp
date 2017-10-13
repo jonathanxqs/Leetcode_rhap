@@ -1,5 +1,3 @@
-
-
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
@@ -8,7 +6,7 @@ public:
 
         vector<int> ret(2, -1);
         if (n==0) return ret;
-        
+
         // Search for the left one
         while (i < j)
         {
