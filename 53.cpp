@@ -10,10 +10,8 @@ public:
         }
         return ans;
     }
-};
 
-
-public int maxSubArray(int[] A) {
+    public int maxSubArray(int[] A) {
         int n = A.length;
         int[] dp = new int[n];//dp[i] means the maximum subarray ending with A[i];
         dp[0] = A[0];
@@ -25,4 +23,9 @@ public int maxSubArray(int[] A) {
         }
         
         return max;
-}
+    }
+
+
+};
+
+
