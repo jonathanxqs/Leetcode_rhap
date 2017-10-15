@@ -26,6 +26,8 @@ public:
             else i = mid;               // So that this won't make the search range stuck.
         }
         ret[1] = j;
-        return ret; 
+        return ret;
+
+        // need mid +-1 for one side , not two side  
     }
 };
