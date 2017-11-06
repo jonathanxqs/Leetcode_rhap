@@ -12,3 +12,4 @@ public:
 
 // 2 time counting sort is not best
 // 2 last , 0 first , 1 mid
+// Runtime: 3 ms
