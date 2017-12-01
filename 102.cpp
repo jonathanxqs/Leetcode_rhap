@@ -10,12 +10,12 @@
 class Solution {
 public:
 
-    vector<vector<int>> rt_ans;
+    vector<vector<int>> rt_ans;  
 
     void buildVector(TreeNode *root, int depth)
     {
         if(root == NULL) return;
-        if(rt_ans.size() == depth)
+        if(rt_ans.size() == depth)  //new level
             rt_ans.push_back(vector<int>());
         
         rt_ans[depth].push_back(root->val);
