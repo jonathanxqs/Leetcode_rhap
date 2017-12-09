@@ -9,12 +9,16 @@ public:
     }
 private:
     void combinationSum2(std::vector<int> &candidates, int target, std::vector<std::vector<int> > &res, std::vector<int> &combination, int begin) {
-        if (!target) {
+        
+        // ==0
+        if (!target) {  
             res.push_back(combination);
             return;
         }
-        for (int i = begin; i != candidates.size() && target >= candidates[i]; ++i)
-            
+
+        for (int i = begin; i < candidates.size() && target >= candidates[i]; ++i)
+
+            // only continuos same occur once
             if (i == begin || candidates[i] != candidates[i - 1]) {
                 combination.push_back(candidates[i]);
                 combinationSum2(candidates, target - candidates[i], res, combination, i + 1);
