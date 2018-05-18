@@ -8,6 +8,7 @@ public:
             level = max(level, lower);
             water += level - lower;
         }
+        
         return water;
     }
 };
